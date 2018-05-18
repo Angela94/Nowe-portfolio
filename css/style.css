@@ -1,0 +1,32 @@
+body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 1px;
+    height: 100%;
+    font-family: 'PT Sans', sans-serif;
+    color: #707070;
+}
+
+html,
+body {
+    height: 100%
+}
+
+.name{
+    text-align: left;
+    font-family: 'Allura', cursive;
+    font-size: 80px;
+    padding-bottom: 30px;
+}
+
+.about{
+    text-align: left;
+    font-family: 'Didact Gothic', sans-serif;
+    line-height: 38px;
+    font-size: 20px;
+}
+
+.me{
+    max-height: 550px;
+}
