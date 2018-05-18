@@ -30,3 +30,8 @@ body {
 .me{
     max-height: 550px;
 }
+
+.sign{
+    text-align: center;
+    padding-top: 30px;
+}
