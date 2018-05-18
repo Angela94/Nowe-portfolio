@@ -29,6 +29,8 @@ body {
 
 .zdjecie{
     max-height: 550px;
+    position: absolute;
+    z-index: -1;
 }
 
 .sign{
@@ -39,4 +41,12 @@ body {
 .container-fluid{
     padding-top: 200px;
     padding: 10%;
+}
+
+.me{
+    width: 400px;
+    height: 545px;
+    border: 1px solid #707070;
+    position: relative;
+    padding: 15px;
 }
