@@ -31,6 +31,8 @@ body {
     max-height: 550px;
     position: absolute;
     z-index: -1;
+    left: -30px;
+    top: 20px;
 }
 
 .sign{
@@ -45,7 +47,7 @@ body {
 
 .me{
     width: 400px;
-    height: 545px;
+    height: 555px;
     border: 1px solid #707070;
     position: relative;
     padding: 15px;
