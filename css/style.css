@@ -27,11 +27,16 @@ body {
     font-size: 20px;
 }
 
-.me{
+.zdjecie{
     max-height: 550px;
 }
 
 .sign{
     text-align: center;
     padding-top: 30px;
+}
+
+.container-fluid{
+    padding-top: 200px;
+    padding: 10%;
 }
