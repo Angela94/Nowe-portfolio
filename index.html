@@ -12,7 +12,7 @@
         <title>Angelika Siejek</title>
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="images/favicon/favicon-as.ico">
+        <link rel="shortcut icon" href="images/favicon.ico">
 
 
         <!-- All CSS Plugins -->
@@ -24,25 +24,38 @@
         <link rel="stylesheet" href="css/animate.css">
 
         <!-- Google Web Fonts  -->
-        <link href="https://fonts.googleapis.com/css?family=Allura|Didact+Gothic|PT+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Allura|Didact+Gothic|Montserrat|PT+Sans|Raleway" rel="stylesheet">
 
 
 
     </head>
-<body>
+    <body onload="init()">
+        <div id="particles-js"></div>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" style="padding: 0px;" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#omnie" onclick="closeNav()">O mnie</a>
+            <a href="#portfolio" onclick="closeNav()">Portfolio</a>
+            <a href="#kontakt" onclick="closeNav()">Kontakt</a>
+        </div>
+    </div>
+        <span id="menu" style="cursor:pointer;position:fixed;z-index: 99;" onclick="openNav()">
+        <i class="fas fa-th-large btn-menu"></i>
+    </span>
+    
     <div class="container-fluid">
-        <div class="row about">
+        <div id="omnie" class="row">
             <div class="col-xl-8 my-auto" style="padding-right: 50px;">
                 <h2 class="name">
                     Angelika Siejek
                 </h2>
-                <div class="about">
+                <div class="about wow fadeIn" data-wow-duration="3s">
                     <p>Jestem absolwentką Uniwersytetu im. Adama Mickiewicza, kierunku Informatyka. Od jakiegoś czasu interesuje się tematyką User Experience i chciałabym związać z tym swoją przyszłość.
                         Cały czas pogłębiam swoją wiedzę w tym zakresie aby któregoś dnia stać się najlepszą z najlepszych. 
-                        Jestem osobą kontaktową, pozytywną i zawsze uśmiechniętą. Każdego dnia staram się osiągać coraz więcej. Prywatnie jestem miłośniczką snowboardu, pływania oraz śpiewu.</p>
+                        Jestem osobą kontaktową, pozytywną i zawsze uśmiechniętą. Każdego dnia staram się osiągać coraz więcej. Prywatnie jestem miłośniczką mody, snowboardu oraz pływania.</p>
                 </div>
-                <div class="sign">
-                    <img src="images/sign.png" alt="" style="max-height: 80px">
+                <div class="sign wow fadeIn" data-wow-duration="3s">
+                    <img class="sign-size" src="images/sign.png" alt="">
                 </div>
             </div>
             <div class="col-xl-4">
@@ -53,70 +66,106 @@
         </div>  
         
    
-        <div class="row portfolio">
+        <div id="portfolio" class="row portfolio">
            <div class="col-xl-12 my-auto">
                 <h2 class="header">
                     Portfolio
                 </h2> 
            </div>
-               <div class="col-xl-6 margin">
-                   <div class="frame-bottom">
-                       <img src="images/bg20.jpg" alt="" class="img-fluid">
-                   </div>
+            <div class="col-xl-6 margin wow fadeInUp" data-wow-duration="2s">
+                   <figure class="snip1321">
+                       <div class="frame-bottom">
+                           <img src="images/bg5.jpg" alt="" class="img-fluid">
+                       </div>
+                       <figcaption>
+                           <h4>Bilet</h4>
+                           <h2>PKP</h2>
+                       </figcaption>
+                       <a target="_blank" href="files/proces_zakupu_biletu_PKP.pdf"></a>
+                   </figure>
                </div>
-               <div class="col-xl-4 offset-xl-2 margin">
-                   <div class="frame-top">
-                       <img src="images/bg18.jpg" alt="" class="img-fluid">
-                   </div>
+            <div class="col-xl-4 offset-xl-2 margin wow fadeInUp" data-wow-duration="2s">
+                   <figure class="snip1321">
+                       <div class="frame-top">
+                           <img src="images/bg18.jpg" alt="" class="img-fluid">
+                       </div>
+                       <figcaption>
+                           <h4>Strona</h4>
+                           <h2>UAM</h2>
+                       </figcaption>
+                       <a target="_blank" href="http://na8k7b.axshare.com/"></a>
+                   </figure>
                </div> 
-               <div class="col-xl-8">
-                  <div class="frame-left">
-                        <img src="images/bg12.jpeg" alt="" class="img-fluid">
-                  </div>
+            <div class="col-xl-8 wow fadeInUp" data-wow-duration="2s">
+                    <figure class="snip1321">
+                        <div class="frame-left">
+                            <img src="images/bg12.jpeg" alt="" class="img-fluid">
+                        </div>
+                        <figcaption>
+                            <h4>Centrum</h4>
+                            <h2>Trychologiczne</h2>
+                        </figcaption>
+                        <a target="_blank" href="https://si4xgc.axshare.com"></a>
+                    </figure>
                </div> 
+               
+            
         </div>
 
-        <div class="row contact">
+        <div id="kontakt" class="row contact">
             <div class="col-xl-12 my-auto">
                 <h2 class="header">
                     Kontakt
                 </h2> 
             </div>
-            <div class="col-xl-2 contact-icon">
+            <div class="col-xl-2 col-md-3 col-sm-3 contact-icon">
                 <a href="mailto:siejek.angelika@gmail.com" class="href">
                     <i class="far fa-envelope fa-3x"></i>
                 </a>
                 <h5>E-MAIL</h5>
                 <p>siejek.angelika@gmail.com</p>
             </div>
-            <div class="col-xl-2 contact-icon">
+            <div class="col-xl-2 col-md-3 col-sm-3 contact-icon">
                 <a>
                     <i class="fas fa-mobile-alt fa-3x"></i>
                 </a>
                 <h5>TELEFON</h5>
                 <p>502 839 209</p>
             </div>
-            <div class="col-xl-2 contact-icon">
-                <a href="https://www.linkedin.com/in/angelika-siejek/" class="href">
+            <div class="col-xl-2 col-md-3 col-sm-3 contact-icon">
+                <a target="_blank" href="https://www.linkedin.com/in/angelika-siejek/" class="href">
                     <i class="fab fa-linkedin-in fa-3x"></i>
                 </a>
                 <h5>LINKEDIN</h5>
                 <p>angelika-siejek</p>
             </div>
-            <div class="col-xl-2 contact-icon">
-                <a href="https://www.facebook.com/angelika.siejek" class="href">
+            <div class="col-xl-2 col-md-3 col-sm-3 contact-icon">
+                <a target="_blank" href="https://www.facebook.com/angelika.siejek" class="href">
                     <i class="fab fa-facebook-f fa-3x"></i>
                 </a>
                 <h5>FACEBOOK</h5>
                 <p>angelika.siejek</p>
             </div>
         </div>
+        
 </div>
+   
+    <div class="container">
+        <footer class="footer-section">
+            <div class="row" style="padding-bottom: 20px;">
+                <div class="col-xl-12 text-center">
+                    <p>Angelika Siejek © Copyright 2018</p>
+                </div>
+            </div>
+        </footer>  
+    </div>
     
     
     
     
     <!-- All Javascript Plugins  -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="js/wow.min.js"></script>
 
@@ -129,6 +178,6 @@
     </script>
 
     <!-- Main Javascript File  -->
-    <script type="text/javascript" src="js/scripts.js"></script>
+        <script type="text/javascript" src="js/scripts.js" defer="defer"></script>
 </body>
 </html>

@@ -1,9 +1,188 @@
 /* Smooth Scroll */
+function init(){
+    new SmoothScroll(document,120,12)
+}
 
-$('a.smoth-scroll').on("click", function (e) {
-    var anchor = $(this);
-    $('html, body').stop().animate({
-        scrollTop: $(anchor.attr('href')).offset().top - 50
-    }, 1000);
-    e.preventDefault();
+function SmoothScroll(target, speed, smooth) {
+    if (target == document)
+        target = (document.documentElement || document.body.parentNode || document.body) // cross browser support for document scrolling
+    var moving = false
+    var pos = target.scrollTop
+    target.addEventListener('mousewheel', scrolled, false)
+    target.addEventListener('DOMMouseScroll', scrolled, false)
+
+    function scrolled(e) {
+        e.preventDefault(); // disable default scrolling
+        var delta = e.delta || e.wheelDelta;
+        if (delta === undefined) {
+            //we are on firefox
+            delta = -e.detail;
+        }
+        delta = Math.max(-1, Math.min(1, delta)) // cap the delta to [-1,1] for cross browser consistency
+
+        pos += -delta * speed
+        pos = Math.max(0, Math.min(pos, target.scrollHeight - target.clientHeight)) // limit scrolling
+
+        if (!moving) update()
+    }
+
+    function update() {
+        moving = true
+        var delta = (pos - target.scrollTop) / smooth
+        target.scrollTop += delta
+        if (Math.abs(delta) > 0.5)
+            requestFrame(update)
+        else
+            moving = false
+    }
+
+    var requestFrame = function() { // requestAnimationFrame cross browser
+        return (
+            window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function(func) {
+                window.setTimeout(func, 1000 / 50);
+            }
+        );
+    }()
+}
+
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+        document.getElementById("menu").style.visibility = "hidden";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+    document.getElementById("menu").style.visibility = "visible";
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
+
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 10
+            , "density": {
+                "enable": true
+                , "value_area": 800
+            }
+        }
+        , "color": {
+            "value": "#ffffff"
+        }
+        , "shape": {
+            "type": "edge"
+            , "stroke": {
+                "width": 0
+                , "color": "#000"
+            }
+            , "polygon": {
+                "nb_sides": 6
+            }
+            , "image": {
+                "src": "img/github.svg"
+                , "width": 100
+                , "height": 100
+            }
+        }
+        , "opacity": {
+            "value": 0.3
+            , "random": true
+            , "anim": {
+                "enable": false
+                , "speed": 1
+                , "opacity_min": 0.1
+                , "sync": false
+            }
+        }
+        , "size": {
+            "value": 160
+            , "random": false
+            , "anim": {
+                "enable": true
+                , "speed": 10
+                , "size_min": 40
+                , "sync": false
+            }
+        }
+        , "line_linked": {
+            "enable": false
+            , "distance": 200
+            , "color": "#ffffff"
+            , "opacity": 1
+            , "width": 2
+        }
+        , "move": {
+            "enable": true
+            , "speed": 8
+            , "direction": "none"
+            , "random": false
+            , "straight": false
+            , "out_mode": "out"
+            , "bounce": false
+            , "attract": {
+                "enable": false
+                , "rotateX": 600
+                , "rotateY": 1200
+            }
+        }
+    }
+    , "interactivity": {
+        "detect_on": "canvas"
+        , "events": {
+            "onhover": {
+                "enable": false
+                , "mode": "grab"
+            }
+            , "onclick": {
+                "enable": false
+                , "mode": "push"
+            }
+            , "resize": true
+        }
+        , "modes": {
+            "grab": {
+                "distance": 400
+                , "line_linked": {
+                    "opacity": 1
+                }
+            }
+            , "bubble": {
+                "distance": 400
+                , "size": 40
+                , "duration": 2
+                , "opacity": 8
+                , "speed": 3
+            }
+            , "repulse": {
+                "distance": 200
+                , "duration": 0.4
+            }
+            , "push": {
+                "particles_nb": 4
+            }
+            , "remove": {
+                "particles_nb": 2
+            }
+        }
+    }
+    , "retina_detect": true
+});
+var count_particles, update;
+count_particles = document.querySelector('.js-count-particles');
+update = function () {
+    requestAnimationFrame(update);
+};
+requestAnimationFrame(update);;
